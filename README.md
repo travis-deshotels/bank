@@ -8,3 +8,4 @@ Stack is
 * SQLITE
 * sqlite3 (DAO)
 * fastapi (API)
+* flask (web UI)

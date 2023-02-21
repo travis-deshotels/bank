@@ -1,5 +1,5 @@
 import service.userservice as service
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 
 app = FastAPI()
 
@@ -11,6 +11,6 @@ def read_root():
     }
 
 
-@app.get("/accounts/{user_id}")
-def get_accounts_for_user(user_id):
-    return service.get_accounts_for_user(user_id)
+@app.post("/accounts/{user_id}")
+async def get_accounts_for_user(user_id: str, encrypted_key: bytes = Depends(service.parse_body)):
+    return service.get_accounts_for_user(user_id, encrypted_key)

@@ -2,4 +2,3 @@ venv
 .idea
 sqlite
 __pycache__
-key

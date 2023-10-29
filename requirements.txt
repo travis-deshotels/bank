@@ -2,4 +2,3 @@ fastapi
 uvicorn[standard]
 Flask
 requests
-rsa

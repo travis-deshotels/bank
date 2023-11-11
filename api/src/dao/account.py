@@ -1,6 +1,6 @@
 import sqlite3
 
-SQLITE_DB = 'D:/pythonprojects/bank/sqlite'
+SQLITE_DB = '/app/data/bank.db'
 
 
 def get_accounts_for_user(user):

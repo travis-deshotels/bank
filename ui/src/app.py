@@ -1,10 +1,11 @@
 import json
+import os
 import requests
 from flask import Flask
 
 app = Flask(__name__)
-BASE_API_URL = 'http://localhost:8000'
-
+BASE_API_URL = f'http://{os.environ["API_URL"]}:8000'
+BASE_HTML = '<link rel="shortcut icon" href="static/favicon.ico">'
 
 @app.route("/<user>")
 def view_accounts(user):
@@ -17,3 +18,7 @@ def view_accounts(user):
                       <p>{account['account_balance']}</p>"
 
     return response
+
+@app.route("/")
+def say_hello():
+    return BASE_HTML + '<p>Hello there!</p>'

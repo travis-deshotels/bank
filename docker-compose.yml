@@ -1,0 +1,16 @@
+version: "2.23.0"
+services:
+    ui:
+        build: ./ui
+        ports:
+            - 5000:5000
+        environment:
+            API_URL: api
+    api:
+        build: ./api
+        ports:
+            - 8000:8000
+        volumes:
+            - bank:/app/data
+volumes:
+    bank:

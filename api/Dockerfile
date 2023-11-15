@@ -3,6 +3,7 @@ FROM python:3.9
 WORKDIR /app
 
 COPY src/requirements.txt ./
+COPY bank.db /app/data/
 
 RUN pip install -r requirements.txt
 
